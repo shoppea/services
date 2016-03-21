@@ -1,6 +1,5 @@
 package seller
 
-
 import (
 	_ "github.com/jinzhu/gorm"
 )

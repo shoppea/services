@@ -1,4 +1,4 @@
-package error
+package throw
 
 import (
 	log "github.com/Sirupsen/logrus"

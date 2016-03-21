@@ -1,14 +1,11 @@
 package product
 
-
 import (
 	_ "github.com/jinzhu/gorm"
-	"github.com/jinzhu/gorm"
+	"common"
 )
 
-type Product struct {
-	gorm.Model
-	Name string
-	CategoryID uint
+type Feature struct {
+	common.Model `gorm:"embedded"`
+	Description string
 }
-
