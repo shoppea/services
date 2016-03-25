@@ -1,10 +1,14 @@
 package category
 
-import "common"
+import (
+	"common"
+	"github.com/jinzhu/gorm"
+)
 
 type Category struct {
 	common.DBImplementer
-	common.Model `gorm:"embedded"`
+	Name string
+	gorm.Model `gorm:"embedded"`
 }
 
 func (c *Category ) AddEntity() error{

@@ -1,14 +1,10 @@
 package product
 
 import (
-	"common"
 	_"db"
 )
 
-type Product struct {
-	common.Model `gorm:"embedded"`
-	Features []Feature
-	SubCategoryID SubCategory      // Product has one subcategory
+type Product interface{
 }
 
 func (p *Product ) AddProduct() error{

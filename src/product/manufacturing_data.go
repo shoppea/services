@@ -1,8 +1,10 @@
 package product
 import (
 	"common"
+	"github.com/jinzhu/gorm"
 )
 
 type Manufacturer struct {
-	common.Model
+	gorm.Model
+	Name string
 }

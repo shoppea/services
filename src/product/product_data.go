@@ -3,9 +3,11 @@ package product
 import (
 	_ "github.com/jinzhu/gorm"
 	"common"
+	"github.com/jinzhu/gorm"
 )
 
 type Feature struct {
-	common.Model `gorm:"embedded"`
+	gorm.Model `gorm:"embedded"`
+	Name string
 	Description string
 }

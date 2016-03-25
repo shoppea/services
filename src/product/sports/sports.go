@@ -6,3 +6,4 @@ type SportsProduct struct {
 	product.Product
 	Type string
 }
+

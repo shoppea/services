@@ -1,7 +1,15 @@
 package product
-import "common"
+
+import (
+	"common"
+	"github.com/jinzhu/gorm"
+	"io/ioutil"
+	"product/category"
+)
 
 type SubCategory struct {
-	common.Model
+	gorm.Model
+	name string
+	Category category.Category
 	CategoryID int
 }

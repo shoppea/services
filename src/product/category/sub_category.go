@@ -1,10 +1,14 @@
 package category
 
-import "common"
+import (
+	"common"
+	"github.com/jinzhu/gorm"
+)
 
 type SubCategory struct {
 	CategoryID int
-	common.Model
+	gorm.Model
+	Name string
 	common.DBImplementer
 }
 
