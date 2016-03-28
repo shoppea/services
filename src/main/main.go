@@ -5,10 +5,18 @@ import
 	"github.com/gin-gonic/gin"
 	"api"
 	//"fmt"
+	"product/category"
+	"product/gender"
+	"product/electronic"
 )
 
 func init(){
-	db.SharedConnection()
+  	conn :=	db.SharedConnection()
+	conn.CreateTable(category.Category{})
+	conn.CreateTable(category.SubCategory{})
+	conn.CreateTable(gender.Gender{})
+	conn.CreateTable(gender.GenderCategory{})
+	conn.CreateTable(electronic.ElectronicProduct{})
 }
 
 type Name struct {
@@ -25,6 +33,10 @@ func main() {
 
 	// ----------------- CATEGORY -----------------
 	gin.POST("/category",api.CreateCategory)
+	gin.POST("/sub_category", api.CreateSubCategory)
+
+	// ----------------- Gender -----------------
+	gin.POST("/gender",api.CreateGender)
 
 	// ---------------- HEALTHZ -------------------
 	gin.GET("/healthz",api.Healthz)

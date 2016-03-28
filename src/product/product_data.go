@@ -2,7 +2,6 @@ package product
 
 import (
 	_ "github.com/jinzhu/gorm"
-	"common"
 	"github.com/jinzhu/gorm"
 )
 

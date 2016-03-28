@@ -5,13 +5,16 @@ import (
 	"product"
 	"github.com/Sirupsen/logrus"
 	"db"
+	"common"
 )
 
 // HANDLER<POST> : SERVICE/PRODUCT
 // Create Product
 func CreateProduct(c *gin.Context)  {
 	var product product.Product
-	product.AddEntity()
+	common.ParseRequestJSON(c,product)
+	db.DBInsert(product)
+	common.Success(c)
 }
 
 // HANDLER<GET> : SERVICE/PRODUCT
@@ -27,6 +30,6 @@ func GetProducts(c *gin.Context)  {
 // HANDLER<DELETE> : SERVICE/PRODUCT
 // Delete product by id from DB
 func DeleteProduct(c *gin.Context){
-	db.DBConnection.Delete(c.BindJSON(&product.Product{}))
+	//db.DBConnection.Delete(c.BindJSON(&product.Product{}))
 }
 
